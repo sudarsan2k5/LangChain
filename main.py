@@ -1,6 +1,13 @@
-def main():
-    print("Hello from langchain!")
+from langchain_openai import ChatOpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
-if __name__ == "__main__":
-    main()
+llm = ChatOpenAI(
+    model = 'gpt-4o'
+)
+
+ai_message = llm.invoke("hi how are you ?")
+
+print(ai_message.content)
